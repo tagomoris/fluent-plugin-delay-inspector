@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["TAGOMORI Satoshi"]
   gem.email         = ["tagomoris@gmail.com"]
   gem.summary       = %q{Fluentd plugin to inspect diff of real-time and log-time}
-  gem.description   = %q{Inspect delay of log, and inject it into message itself with specified attribute name}
+  gem.description   = %q{Inspect delay of log, and emit it, or inject it into message itself with specified attribute name}
   gem.homepage      = "https://github.com/tagomoris/fluent-plugin-delay-inspector"
 
   gem.files         = `git ls-files`.split($\)
