@@ -1,4 +1,6 @@
-# fluent-plugin-delay-inspector, a plugin for [Fluentd](http://fluentd.org)
+# fluent-plugin-delay-inspector
+
+This is a plugin for [Fluentd](http://fluentd.org)
 
 ## DelayInspectorOutput
 
