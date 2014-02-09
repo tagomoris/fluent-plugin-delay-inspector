@@ -1,5 +1,7 @@
 # fluent-plugin-delay-inspector
 
+This is a plugin for [Fluentd](http://fluentd.org)
+
 ## DelayInspectorOutput
 
 Fluentd plugin to inspect diff of real-time and log-time, and emit message as:
