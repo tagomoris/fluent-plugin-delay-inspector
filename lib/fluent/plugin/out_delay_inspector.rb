@@ -8,6 +8,11 @@ class Fluent::DelayInspectorOutput < Fluent::Output
   config_param :key_name, :string, :default => 'delay'
   config_param :reserve_data, :bool, :default => false
 
+  # Define `log` method for v0.10.42 or earlier
+  unless method_defined?(:log)
+    define_method("log") { $log }
+  end
+
   def configure(conf)
     super
 
@@ -33,14 +38,14 @@ class Fluent::DelayInspectorOutput < Fluent::Output
             if @remove_prefix and
                 ( (tag.start_with?(@removed_prefix_string) and tag.length > @removed_length) or tag == @remove_prefix)
               tag = tag[@removed_length..-1]
-            end 
+            end
             if @add_prefix
               tag = if tag and tag.length > 0
                       @added_prefix_string + tag
                     else
                       @add_prefix
                     end
-            end     
+            end
             tag
           end
     if @reserve_data
