@@ -13,6 +13,11 @@ class Fluent::DelayInspectorOutput < Fluent::Output
     define_method("log") { $log }
   end
 
+  # Define `router` method of v0.12 to support v0.10 or earlier
+  unless method_defined?(:router)
+    define_method("router") { Fluent::Engine }
+  end
+
   def configure(conf)
     super
 
@@ -51,11 +56,11 @@ class Fluent::DelayInspectorOutput < Fluent::Output
     if @reserve_data
       es.each do |time,record|
         record[@key_name] = Fluent::Engine.now - time
-        Fluent::Engine.emit(tag, time, record)
+        router.emit(tag, time, record)
       end
     else
       es.each do |time,record|
-        Fluent::Engine.emit(tag, time, {@key_name => (Fluent::Engine.now - time)})
+        router.emit(tag, time, {@key_name => (Fluent::Engine.now - time)})
       end
     end
     chain.next
