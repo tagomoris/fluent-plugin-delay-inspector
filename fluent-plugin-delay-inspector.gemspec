@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 Gem::Specification.new do |gem|
   gem.name          = "fluent-plugin-delay-inspector"
   gem.version       = "0.0.3"
@@ -8,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Fluentd plugin to inspect diff of real-time and log-time}
   gem.description   = %q{Inspect delay of log, and emit it, or inject it into message itself with specified attribute name}
   gem.homepage      = "https://github.com/tagomoris/fluent-plugin-delay-inspector"
-  gem.license       = "APLv2"
+  gem.license       = "Apache-2.0"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
