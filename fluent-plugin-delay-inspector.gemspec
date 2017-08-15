@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name          = "fluent-plugin-delay-inspector"
-  gem.version       = "0.0.3"
+  gem.version       = "0.1.0"
   gem.authors       = ["TAGOMORI Satoshi"]
   gem.email         = ["tagomoris@gmail.com"]
   gem.summary       = %q{Fluentd plugin to inspect diff of real-time and log-time}
